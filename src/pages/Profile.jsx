@@ -1,5 +1,6 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
+import { Link } from 'react-router-dom'
 function Profile() {
   return (
     <>
@@ -15,8 +16,10 @@ function Profile() {
                   <p className="text-muted mb-1">Full Stack Developer</p>
                   <p className="text-muted mb-4">Colombia, Bogotá</p>
                   <div className="d-flex justify-content-center mb-2">
-                    <button type="button" className="btn btn-primary">Editar</button>
-                    <button type="button" className="btn btn-outline-primary ms-1">Guardar</button>
+                    <button type="button" className="btn btn-outline-success">Editar</button>
+                    <Link to="/mainBook">
+                    <button type="button" className="btn btn-outline-dark ms-1">Inicio</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -49,7 +52,7 @@ function Profile() {
                       <p className="mb-0">Nombre Completo</p>
                     </div>
                     <div className="col-sm-9">
-                      <p className="text-muted mb-0">Johnatan Smith</p>
+                      <p className="text-muted mb-0">Daniel Quilcue</p>
                     </div>
                   </div>
                   <hr />
@@ -122,7 +125,7 @@ function Profile() {
                 <div className="col-md-6">
                   <div className="card mb-4 mb-md-0 align-items-center ">
                     <div className="card-body">
-                      <p className="mb-4"><span className="text-primary font-italic me-1">Pirobo</span> titulo
+                      <p className="mb-4"><span className="text-primary font-italic me-1">Libros</span>Leidos
                       </p>
                       <div style={{ width: 240, height: 240 }}>
                         <CircularProgressbar

@@ -1,10 +1,20 @@
+
+import { useEffect, useState } from 'react';
 import logoLogin from '../assets/libro.png'
 import login from '../assets/login.jpg'
-
+import { BrowserRouter as  Routes, Route, Link } from "react-router-dom";
 export const LogIn = () => {
+
+  const [account, setAccount] = useState(false)
+ 
+  const handleRegisterClick = () => {
+    setAccount(true);
+  }
+  
   return (
     <>
       <main className="d-flex align-items-center min-vh-100 py-3 py-md-0 bodyLogIn">
+
         <div className="container">
           <div className="card login-card">
             <div className="row no-gutters">
@@ -52,6 +62,7 @@ export const LogIn = () => {
                         placeholder="Contraseña"
                       />
                     </div>
+                    <Link to="/mainBook">
                     <input
                       name="login"
                       id="login"
@@ -59,15 +70,16 @@ export const LogIn = () => {
                       type="button"
                       value="Iniciar Sesión"
                     />
+                    </Link>
                   </form>
                   <a href="#!" className="forgot-password-link">
                   ¿Ha olvidado su contraseña?                  
                   </a>
                   <p className="login-card-footer-text">
                     ¿No tiene cuenta?{" "}
-                    <a href="#!" className="text-reset">
-                      Regístrese aquí
-                    </a>
+                    <a href="#!" className="text-reset" onClick={handleRegisterClick}>
+          Regístrese aquí
+        </a>
                   </p>
                   <nav className="login-card-footer-nav">
                     <a href="#!">Condiciones de uso, política de privacidad</a>
@@ -77,7 +89,10 @@ export const LogIn = () => {
             </div>
           </div>
         </div>
+
+
       </main>
+
     </>
   );
 };
